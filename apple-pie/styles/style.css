@@ -62,7 +62,7 @@ h2 {
 }
 
 article {
-  margin: 4rem
+  margin: 4rem;
 }
 
 #summary p {
@@ -93,17 +93,14 @@ section {
   content: "- "
 }
 
+@counter-style custom {
+  system: extends decimal;
+  suffix: ") ";
+}
+
 #directions ol {
-  list-style: none;
+  list-style: custom;
+  list-style-position: inside;
   margin: 0;
   padding: 0;
-  counter-reset: direction;
-}
-
-#directions li {
-  counter-increment: direction;
-}
-
-#directions li::before {
-  content: counter(direction) ") "
 }
